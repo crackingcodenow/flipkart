@@ -1,0 +1,24 @@
+{
+  "name": "flipkart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "demo.js",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crackingcodenow/flipkart.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crackingcodenow/flipkart/issues"
+  },
+  "homepage": "https://github.com/crackingcodenow/flipkart#readme"
+}
