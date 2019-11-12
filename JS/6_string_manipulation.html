@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  Your Message :
+  <input type="text" name="" id="txtMsg" onblur="printValue()"> <br>
+  <div id="lbl"></div>
+
+  <script>
+    function printValue() {
+      var str = document.getElementById("txtMsg").value;
+      var firstChar = str.charAt(0);
+      var restChars = str.substring(1);
+      var sentence = firstChar.toUpperCase().fontsize(7).fontcolor("red") + restChars.toLowerCase();
+      document.getElementById("lbl").innerHTML = sentence;
+    }
+  </script>
+
+</body>
+
+</html>

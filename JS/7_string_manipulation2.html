@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+</head>
+
+<body>
+
+  Email : <input type="text" id="emailid" onblur="mail()">
+  <br>
+  <div id="label"></div>
+
+  <script>
+    function mail() {
+      var email = document.getElementById("emailid").value;
+      var atPos = email.indexOf("@");
+      var id = email.substring(0,atPos);
+      var domain = email.substring(atPos + 1);
+      document.getElementById("label").innerHTML = "E-mail : " + id + "<br>" + "Domain : " + domain;
+    }
+  </script>
+
+</body>
+
+</html>

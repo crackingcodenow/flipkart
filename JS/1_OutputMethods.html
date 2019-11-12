@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Demo</title>
+  <script type="text/javascript">
+    function submitClick() {
+      uname = document.getElementById("txtName").value;
+      uname = uname.toUpperCase();
+      alert("Hello " + uname);
+      document.getElementById("msg").innerHTML = "Welcome Mr. " + uname;
+    }
+
+    function deleteClick() {
+      console.warn("Record requested for Delete");
+      x = confirm("Record will be deleted! Are you sure?");
+      if (x == true) {
+        document.write("Record deleted.");
+        console.error("clicked OK");
+      }
+      else {
+        document.write("Cancelled.");
+        console.info("clicked cancel.");
+      }
+    }
+  </script>
+</head>
+
+<body>
+  Name :
+  <input type="text" id="txtName">
+  <br> <br>
+  <input type="button" value="Submit" onclick="submitClick()">
+  <input type="button" value="Delete" onclick="deleteClick()">
+  <div>
+    <p align="center" id="msg"></p>
+  </div>
+</body>
+
+</html>

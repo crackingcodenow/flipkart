@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Welcome</title>
+</head>
+
+<body>
+  <div>
+    <fieldset>
+      <form>
+        Enter your name: <input type="text" name="txtName" id="user_name"> <br><br>
+      </form>
+      <button onclick="myFunction()">Submit</button>
+    </fieldset>
+  </div>
+  <div align="center">
+    <h1> Welcome, <strong><i><span id="demo"> </span></i></strong></h1>
+    <p>Hope you are enjoying the evening. <br> See you on Monday. <br> Bye, <strong><i><span id="demos">
+          </span></i></strong> </p>
+  </div>
+  <script>
+    function myFunction() {
+      document.getElementById("demo").innerHTML = document.getElementById("user_name").value;
+      document.getElementById("demos").innerHTML = document.getElementById("user_name").value;
+      var text = document.getElementById("demo").innerHTML;
+      document.getElementById("demo").innerHTML = text.toUpperCase();
+      var text = document.getElementById("demos").innerHTML;
+      document.getElementById("demos").innerHTML = text.toUpperCase();
+    }
+  </script>
+</body>
+
+</html>

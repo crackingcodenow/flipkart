@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <script>
+    function f1() {
+      var product = {
+        name : "TV",
+        price: 15000,
+        qty: 3,
+        isInStock: true,
+        total : function() {
+          return product.qty*product.price;
+        },
+        print : function() {
+          document.write("name=" + product.name + "<br>" + "price=" + product.price + "<br>" +
+          "qty=" + product.qty + "<br>" + "isInStock=" + product.isInStock + "<br>" +
+          "total=" + product.total());
+        }
+        }
+        
+        product.print();
+        document.write("<br>");
+        product.name="Shoes";
+        product.price=10000;
+        product.qty=2;
+        product.isInStock=true;
+        product.print();
+      }
+      f1();
+  </script>
+</body>
+
+</html>

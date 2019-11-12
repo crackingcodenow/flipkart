@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "path": "C:\\Flipkart"
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "bootstrap-3.3.7-dist",
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false
+  }
+}

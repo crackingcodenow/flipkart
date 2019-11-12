@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Regular Expression</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="10.1_regexp.js"></script>
+</head>
+
+<body onload="bodyLoad()">
+  <div class="container">
+
+    <h2 class="text-primary">Register Mobile number</h2>
+    <div class="form-group">
+      <label>Your Country <span class="badge badge-light"><img src="imgFlag" width="50" height="50"></span></label>
+      <div>
+        <select onchange="countryChanged()" id="lstCountries" class="form-control">
+          <option value="-1">Select country</option>
+          <option value="india">INDIA</option>
+          <option value="usa">USA</option>
+          <option value="uk">UK</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Mobile Number</label>
+      <div>
+        <input type="text" id="txtMobile" class="form-control">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="button" value="Register" onclick="verifyMobile()">
+    </div>
+
+    <div id="lblError" class="form-group alert alert-danger">
+      <h3>Invalid Mobile number</h3>
+      <div id="msg"></div>
+      <input type="button" class="btn btn-danger" value="X" onclick="closeClick()">  
+    </div>
+ 
+  </div>
+</body>
+
+</html>

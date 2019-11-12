@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>1.CSS Selectors</title>
+  <style>
+    #heading {
+      color: red;
+    }
+
+    h1 {
+      color: magenta;
+    }
+
+    h2,
+    p {
+      background-color: blueviolet;
+      color: white;
+      text-align: center;
+    }
+
+    #effects {
+      background-color: brown;
+      color: white;
+      text-align: center;
+    }
+
+    .backEffects {
+      background-color: yellowgreen;
+    }
+
+    .textEffects {
+      background-color: yellowgreen;
+      color: white;
+      text-align: center;
+    }
+
+    ul>li {
+      color: red;
+    }
+
+    thead>tr {
+      background-color: darkcyan;
+      color: white;
+    }
+
+    tbody>tr {
+      background-color: yellowgreen;
+      color: white;
+    }
+
+    tfoot>tr>td {
+      text-align: center;
+      background-color: darkcyan;
+      color: white;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+
+    input[type=text] {
+      border-style: solid;
+      border-width: 2px;
+      border-color: red;
+    }
+
+    input[type=button] {
+      background-color: yellowgreen;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="heading" align="center"><u>Topic: <br>1. CSS SELECTORS</u></h1>
+  <div>
+    <h1><b><u>1.TYPE Selector</u>:</b></h1>
+    <div>
+      <u>Syntax:</u> <br> <br>
+      &lt head &gt <br>
+      &nbsp; &lt style &gt <br> <br> <b>
+        &nbsp; &nbsp; h2, p { <br>
+        &nbsp; &nbsp; background-color : blueviolet; <br>
+        &nbsp; &nbsp; color : white; <br>
+        &nbsp; &nbsp; } <br> </b> <br>
+      &nbsp; &lt /style &gt <br>
+      &lt /head &gt <br> <br>
+      &lt body &gt <br> <b>
+        &nbsp; &lt h2 &gt HTML &lt /h2 &gt <br>
+        &nbsp; &lt p &gt Para &lt /p &gt <br> </b>
+      &lt /body &gt <br>
+
+    </div>
+
+    <div>
+      <h2>HTML:</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+        dolorem vitae doloremque soluta ullam autem sequi numquam dolore itaque
+        dignissimos veritatis ipsam suscipit! Explicabo at voluptas sequi quis similique recusandae.</p>
+    </div>
+  </div>
+
+  <br>
+  <hr>
+  <br>
+
+  <div>
+    <h1><b><u>2.ID Selector</u>:</b></h1>
+    <div>
+      <u>Syntax:</u> <br> <br>
+      &lt head &gt <br>
+      &nbsp; &lt style &gt <br> <br> <b>
+        &nbsp; &nbsp; #effects { <br>
+        &nbsp; &nbsp; background-color : brown; <br>
+        &nbsp; &nbsp; color : white; <br>
+        &nbsp; &nbsp; } <br> <br> </b>
+      &nbsp; &lt /style &gt <br>
+      &lt /head &gt <br> <br>
+      &lt body &gt <br> <b>
+        &nbsp; &lt h2 id="effects" &gt HTML &lt /h2 &gt <br>
+        &nbsp; &lt p &nbsp id="effects" &gt Para &lt /p &gt <br> </b>
+      &lt /body &gt <br>
+    </div>
+
+    <div>
+      <h2 id="effects">HTML:</h2>
+      <p id="effects">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+        dolorem vitae doloremque soluta ullam autem sequi numquam dolore itaque
+        dignissimos veritatis ipsam suscipit! Explicabo at voluptas sequi quis similique recusandae.</p>
+    </div>
+  </div>
+
+  <br>
+  <hr>
+  <br>
+
+  <div>
+    <h1><b><u>3.CLASS Selector</u>:</b></h1>
+    <div>
+      <u>Syntax:</u> <br> <br>
+      &lt head &gt <br>
+      &nbsp; &lt style &gt <br> <br> <b>
+        &nbsp; &nbsp; .backEffects { <br>
+        &nbsp; &nbsp; background-color : yellowgreen; <br>
+        &nbsp; &nbsp; } <br>
+        &nbsp; &nbsp; .textEffects { <br>
+        &nbsp; &nbsp; color : white; <br>
+        &nbsp; &nbsp; text-align : center; <br>
+        &nbsp; &nbsp; } <br> <br> </b>
+      &nbsp; &lt /style &gt <br>
+      &lt /head &gt <br> <br>
+      &lt body &gt <br> <b>
+        &nbsp; &lt h2 class="backEffects textEffects" &gt HTML &lt /h2 &gt <br>
+        &nbsp; &lt p &nbsp class="textEffects" &gt Para &lt /p &gt <br> </b>
+      &lt /body &gt <br>
+    </div>
+
+    <div>
+      <h2 class="backEffects">HTML:</h2>
+      <p class="textEffects">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+        dolorem vitae doloremque soluta ullam autem sequi numquam dolore itaque
+        dignissimos veritatis ipsam suscipit! Explicabo at voluptas sequi quis similique recusandae.</p>
+    </div>
+  </div>
+
+  <br>
+  <hr>
+  <br>
+
+  <div>
+    <h1><b><u>4.DESCENDENT Selector</u>:</b></h1>
+    <div>
+      <h3 style="background-color: white; color: black "><b>There are many DESCENDENT selectors :
+          (ul-li, ol-li), (datalist-option, select-option), (thead,tbody,tfoot - tr), (tr-td), </b></h3>
+    </div>
+    <div>
+      <u>Syntax:</u> <br> <br>
+      &lt head &gt <br>
+      &nbsp; &lt style &gt <br> <br> <b>
+        &nbsp; &nbsp; parent > child { <br>
+        &nbsp; &nbsp; attribute : value ; <br>
+        &nbsp; &nbsp; attribute : value ; <br>
+        &nbsp; &nbsp; } <br> <br> </b>
+      &nbsp; &lt /style &gt <br>
+      &lt /head &gt <br> <br>
+      &lt body &gt <br> <b>
+        &nbsp; &lt ul &gt <br>
+        &nbsp;&nbsp; &lt li &gt HTML &lt /li &gt <br>
+        &nbsp;&nbsp; &lt li &gt CSS &lt /li &gt <br>
+        &nbsp; &lt /ul &gt <br></b>
+      &lt /body &gt <br>
+    </div>
+
+    <br><br>
+
+    <div>
+      <table cellspacing="4" cellpadding="4" width="400">
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Price</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TV</td>
+            <td>45000/-</td>
+          </tr>
+          <tr>
+            <td>Mobile</td>
+            <td>15000/-</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">&copy; copyright, 2019</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div>
+      <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+      </ol>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+      </ul>
+    </div>
+
+
+    <br>
+    <hr>
+    <br>
+
+    <div>
+      <h1><b><u>5.ATTRIBUTE Selector</u>:</b></h1>
+      <div>
+        <h3 style="background-color: white; color: black "><b>There are many ATTRIBUTE selectors :
+            input[type=text / button / etc], &nbsp; img[width=300], &nbsp; aside[width=300], </b></h3>
+      </div>
+      <div>
+        <u>Syntax:</u> <br> <br>
+        &lt head &gt <br>
+        &nbsp; &lt style &gt <br> <br> <b>
+          &nbsp; &nbsp; tagname [attribute = value] { <br>
+          &nbsp; &nbsp;&nbsp; &nbsp; styleAttribute : value; <br>
+          &nbsp; &nbsp; } <br> <br> </b>
+        &nbsp; &lt /style &gt <br>
+        &lt /head &gt <br> <br>
+        &lt body &gt <br> <b>
+          &nbsp; &lt input type="text" &gt <br>
+          &nbsp; &lt input type="button" value="Submit"&gt <br> </b>
+        &lt /body &gt <br>
+      </div>
+      <br>
+      <div>
+        <fieldset>
+          <legend><b>Form:</b></legend>
+          <form action="">
+            <dl>
+              <dt>First Name</dt>
+              <dd><input type="text"></dd>
+              <dt>Last Name</dt>
+              <dd><input type="text"></dd>
+            </dl>
+            <dl>
+              <dt>
+                <input type="button" value="Submit">
+                <input type="button" value="Reset">
+              </dt>
+            </dl>
+          </form>
+        </fieldset>
+      </div>
+    </div>
+
+</body>
+
+</html>

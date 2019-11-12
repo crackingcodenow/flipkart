@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Form Pattern</title>
+</head>
+
+<body>
+  <form action="" method="GET">
+    <fieldset>
+      <legend align="center"><h2>Login Details:</h2></legend>
+      Name: <input type="text" name="txtName" placeholder="Enter name" size="30" value="John" autofocus> <br> <br>
+      Password: <input type="text" id="pwd1" name="txtPwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&]).{3,}"> <br> <br>
+      Phone: <input type="number" value="9999912345" readonly> <br> <br>
+      Email: <input type="email" value="abc@gmail.com" disabled> <br> <br>
+      Gender : <br> <input type="radio" name="gender" value="Male" checked> Male 
+      <input type="radio" name="gender" value="Female"> Female <br> <br>
+      Gender : <br> <input type="checkbox" name="gender" value="Male" checked> Male 
+      <input type="checkbox" name="gender" value="Female"> Female <br> <br>
+      Select your State: 
+      <select name="" id="" size="5">
+        <option value="">Select state</option>
+        <optgroup label="SOUTH">
+          <option value="AP">ANDHRA PRADESH</option>
+          <option value="TN">TAMIL NADU</option>
+          <option value="KAR">KARNATAKA</option>
+        </optgroup>
+        <optgroup label="NORTH">
+          <option value="DEL">DELHI</option>
+          <option value="UP">UTTAR PRADESH</option>
+          <option value="HAR">HARYANA</option>
+        </optgroup>
+      </select> <br> <br>
+      Select your City:  
+      <select name="city" id="" size="5" multiple>
+        <option value="">Select city</option>
+        <optgroup label="SOUTH">
+          <option value="500035">Hyderabad</option>
+          <option value="400023">Chennai</option>
+          <option value="300033">Banglore</option>
+        </optgroup>
+        <optgroup label="NORTH">
+          <option value="110060">Delhi</option>
+          <option value="220040">Noida</option>
+          <option value="330033">Gurgaon</option>
+        </optgroup>
+      </select> <br> <br>
+      Enter your Address here:
+      <textarea name="" id="" cols="40" rows="4"></textarea> <br> <br>
+      Terms of service: 
+      <textarea name="" id="" cols="30" rows="4" readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ...
+        </textarea>
+      <button>Submit</button>
+    </fieldset>
+  </form>
+</body>
+
+</html>

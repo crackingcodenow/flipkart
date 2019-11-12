@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Demo</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <style>
+    label {
+      font-weight: bold;
+    }
+
+    #popup {
+      position: fixed;
+      top: 50px;
+      left: 500px;
+    }
+  </style>
+  <script>
+    function bodyLoad() {
+      document.getElementById("popup").style.display = "none";
+    }
+    function registerClick() {
+      document.getElementById("popup").style.display = "block";
+      document.getElementById("lblid").innerHTML = document.getElementById("txtid").value;
+      document.getElementById("lblname").innerHTML = document.getElementById("txtname").value;
+      document.getElementById("lblstock").innerHTML = frmRegister.stock.value;
+      document.getElementById("lblshipped").innerHTML = document.getElementById("lstcities").value;
+    }
+    function okClick() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+</head>
+
+<body onload="bodyLoad()">
+  <div class="container">
+    <form name="frmRegister">
+      <fieldset style="width: 300px;">
+        <legend>Register Product</legend>
+
+        <div>
+          <label>Product ID</label>
+          <div>
+            <input type="number" id="txtid" class="form-control">
+          </div>
+        </div>
+
+        <div>
+          <label>Name</label>
+          <div>
+            <input type="text" id="txtname" class="form-control">
+          </div>
+        </div>
+
+        <div>
+          <label>Is In Stock</label>
+          <div>
+            <input type="radio" name="stock" value="Available">Yes
+            <input type="radio" name="stock" value="Out of stock">No
+          </div>
+        </div>
+
+        <div>
+          <label>Shipped To</label>
+          <div>
+            <select id="lstcities">
+              <option value="Delhi">Delhi</option>
+              <option value="Hyd">Hyd</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <input type="button" value="Register" onclick="registerClick()">
+        </div>
+
+      </fieldset>
+    </form>
+
+    <div id="popup">
+      <div class="card" style="width: 600px;">
+
+        <div class="card-header">
+          <h2>Product details:</h2>
+        </div>
+
+        <div class="card-body">
+          <table class="table table-hover">
+            <colgroup span="1" style="background-color: bisque;"></colgroup>
+            <tbody>
+              <tr>
+                <td>Product ID</td>
+                <td id="lblid"></td>
+              </tr>
+              <tr>
+                <td>Name</td>
+                <td id="lblname"></td>
+              </tr>
+              <tr>
+                <td>Stock status</td>
+                <td id="lblstock"></td>
+              </tr>
+              <tr>
+                <td>Shipped to :</td>
+                <td id="lblshipped"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card-footer">
+          <input type="button" class="btn btn-danger" value="OK" onclick="okClick()">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

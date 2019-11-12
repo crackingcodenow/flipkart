@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <div>
+    <h1>Using ID</h1>
+    <form onsubmit="return validateForm()" method="post">
+      Name: <input type="text" id="fname">
+      <input type="submit" value="Submit">
+    </form>
+
+    <script>
+      function validateForm() {
+        var x = document.getElementById("fname").value;
+        if (x == "") {
+          alert("Name fill");
+          return false;
+        }
+      }
+    </script>
+  </div>
+
+  <div>
+    <h1>Using NAME</h1>
+    <form name="myForm" onsubmit="return validateForm()" method="post">
+      Name: <input type="text" name="fname">
+      <input type="submit" value="Submit">
+    </form>
+
+    <script>
+      function validateForm() {
+        var x = document.forms["myForm"]["fname"].value;
+        if (x == "") {
+          alert("Name must be filled out");
+          return false;
+        }
+      }
+    </script>
+  </div>
+
+  <div>
+    <h1>TWO Text boxes Using TWO IF conditions</h1>
+    <form name="myForm" onsubmit="return validateForm()" method="post">
+      FName: <input type="text" name="fname">
+      LName: <input type="text" name="lname">
+
+      <input type="submit" value="Submit">
+    </form>
+
+    <script>
+      function validateForm() {
+        var p = document.forms["myForm"]["fname"].value;
+        var q = document.forms["myForm"]["lname"].value;
+
+        if (p == "") {
+          alert("First Name must be filled out");
+          return false;
+        }
+        if (q == "") {
+          alert("Last Name must be filled out");
+          return false;
+        }
+      }
+    </script>
+  </div>
+
+  <div>
+    <h1>TWO Text boxes Using ONE IF condition with || symbol </h1>
+    <div>
+      <form name="myForm" onsubmit="return validateForm()" method="post">
+        FName: <input type="text" name="fname">
+        LName: <input type="text" name="lname">
+
+        <input type="submit" value="Submit">
+      </form>
+
+      <script>
+        function validateForm() {
+          var r = document.forms["myForm"]["fname"].value;
+          var s = document.forms["myForm"]["lname"].value;
+
+          if (r == "" || s == "") {
+            alert("Names must be filled out");
+            return false;
+          }
+        }
+      </script>
+    </div>
+
+
+  <div>
+      <p>Please input a number between 1 and 10:</p>
+      <input id="num">
+      <button type="button" onclick="myFunction()">Submit</button>
+      <p id="demo"></p>
+      
+      <script>
+      function myFunction() {
+        var x, text;
+        x = document.getElementById("num").value;
+        if (isNaN(x) || x < 1 || x > 10) {
+          text = "Input not valid";
+        } else {
+          text = "Input OK";
+        }
+        document.getElementById("demo").innerHTML = text;
+      }
+      </script>   
+  </div>
+
+  
+
+</body>
+
+</html>

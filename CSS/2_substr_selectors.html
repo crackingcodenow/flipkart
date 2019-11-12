@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>2.Substring Selectors</title>
+  <style>
+    h2[class^="text"] {
+      background-color: green;
+      color: white;
+    }
+
+    h2[class$="back"] {
+      background-color: red;
+      color: white;
+    }
+
+    h2[class*="JS"] {
+      background-color: darkcyan;
+      color: white;
+    }
+
+    h2[class~="text effects"] {
+      background-color: darkcyan;
+      color: white;
+    }
+
+    h2[class |="text-effects"] {
+      background-color: darkorange;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="heading" align="center"><u>Topic: <br>2. SUB-STRING SELECTORS</u></h1>
+  <div>
+    <h1><b><u>SUB-STR STARTS / ENDS / ANYWHERE WITH (^$*=)</u>:</b></h1>
+    <div>
+      <u>Syntax:</u> <br> <br>
+      &lt head &gt <br>
+      &nbsp; &lt style &gt <br> <br> <b>
+        &nbsp; &nbsp; E[attr ^= value], E[attr $= value], E[attr *= value] { <br>
+        &nbsp; &nbsp; background-color : blueviolet; <br>
+        &nbsp; &nbsp; color : white; <br>
+        &nbsp; &nbsp; } <br> </b> <br>
+      &nbsp; &lt /style &gt <br>
+      &lt /head &gt <br> <br>
+      &lt body &gt <br> <b>
+        &nbsp; &lt h2 class="textHTML" &gt HTML &lt /h2 &gt <br></b>
+      &lt /body &gt <br>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="text">WELCOME</h2>
+    <h2 class="textHTML">HTML</h2>
+    <h2 class="textCSS">CSS</h2>
+    <h2 class="Jsback">JAVA SCRIPT</h2>
+    <h2 class="advJS">ADV J.S</h2>
+    <h2 class="coreJSadv">CORE & ADV J.S </h2>
+    <h2 class="JQback">JQUERY</h2>
+  </div>
+
+  <br>
+  <hr>
+  <br>
+
+  <div>
+    <h1><b><u>Attribute Selectors with SPACES / SPCL chars (~|=)</u>:</b></h1>
+    <h3>It is used when the attributes defined are having spaces or hyphens in between the same word. <br>
+      Spaces and hyphens here doesn't mean they are two seperate words as in Class selectors but are treated as a single
+      attr selector.</h3>
+    <div>
+      <u>Syntax:</u> <br> <br>
+      &lt head &gt <br>
+      &nbsp; &lt style &gt <br> <br> <b>
+        &nbsp; &nbsp; E[attr ~= value], E[attr |= value] { <br>
+        &nbsp; &nbsp; background-color : blueviolet; <br>
+        &nbsp; &nbsp; color : white; <br>
+        &nbsp; &nbsp; } <br> </b> <br>
+      &nbsp; &lt /style &gt <br>
+      &lt /head &gt <br> <br>
+      &lt body &gt <br> <b>
+        &nbsp; &lt h2 class ~= "text effects" &gt HTML &lt /h2 &gt <br>
+        &nbsp; &lt h2 class |= "text-effects" &gt HTML &lt /h2 &gt <br></b>
+      </b>
+      &lt /body &gt <br>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="text effects">WELCOME</h2>
+    <h2 class="text-effects">HTML</h2>
+    <h2 class="text effects">CSS</h2>
+    <h2 class="text-effects">JAVA SCRIPT</h2>
+    <h2 class="text effects">ADV J.S</h2>
+    <h2 class="text-effects">CORE & ADV J.S </h2>
+    <h2 class="text-effects">JQUERY</h2>
+  </div>
+</body>
+
+</html>

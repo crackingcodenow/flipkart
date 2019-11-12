@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+</head>
+<body>
+  Name : <input type="text" id="txtName" placeholder="Enter Name" onblur="changeCase()">
+<script> 
+  function changeCase() {
+    var uname = document.getElementById("txtName").value;
+    document.getElementById("txtName").value = uname.toUpperCase();
+  }
+  var str = "Welcome";
+  document.write(str.bold().fontsize(7).fontcolor("green").toUpperCase());
+  </script>
+</body>
+</html>

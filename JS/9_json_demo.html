@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>JSON</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="9.1_json_demo.js"></script>
+</head>
+
+<body onload="getProducts(0)">
+  <div align="center" class="container">
+    <h2 class="text-primary font-weight-bold">Amazon Shopping</h2>
+    <div class="card" style="height: 600px;">
+
+      <div class="card-header">
+        <h3 id="lblName"></h3>
+      </div>
+
+      <div class="card-body">
+        <button onclick="prevClick()" style="font-size: 2em;" class="btn btn-outline-success"> prev </button>
+        <img style="height: 400px; width: 400px;" id="imgProduct" class="img-thumbnail">
+        <button onclick="nextClick()" style="font-size: 2em;" class="btn btn-outline-success"> next </button>
+      </div>
+
+      <div class="card-footer">
+        <h3 id="lblPrice"></h3>
+        <div id="lstCities"></div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
