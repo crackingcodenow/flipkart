@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>KFC</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <div>
+        <img src="../Images/kfcbanner.jpg" width="100%" height="400px" class="img-thumbnail">
+      </div>
+    </header>
+
+    <section>
+      <div class="bg-danger text-center text-white">
+        <h2>Customer details</h2>
+        <table align="center">
+          <tr>
+            <td>Name</td>
+            <td><input type="text" id="txtName" class="form-control"></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="bg-danger text-center" style="margin-top: 10px;">
+        <h2 class="text-white">Select a Meal</h2>
+
+        <div class="card-deck">
+
+          <div class="card">
+            <div class="card-header">
+              <h2>OMG Burger</h2>
+            </div>
+            <div class="card-body">
+              <img src="../Images/burger.jpg" alt="img-thumbnail">
+              <input class="form-control" type="radio" id="optBurger" name="meal" value="OMG Burger">
+            </div>
+            <div class="card-footer" style="font-weight: bolder;">
+              &#8377; 120 /-
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h2>OMG Roller</h2>
+            </div>
+            <div class="card-body">
+              <img src="../Images/roller.jpg" alt="img-thumbnail">
+              <input class="form-control" type="radio" id="optRoller" name="meal" value="OMG Roller">
+            </div>
+            <div class="card-footer" style="font-weight: bolder;">
+              &#8377; 100 /-
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-danger text-center" style="margin-top: 10px;">
+        <h2 class="text-white">Select a Add-On</h2>
+
+        <div class="card-deck">
+
+          <div class="card">
+            <div class="card-header">
+              <h2>Hot Wings</h2>
+            </div>
+            <div class="card-body">
+              <img src="../Images/hotwings.jpg" class="img-thumbnail">
+              <input class="form-control" type="checkbox" id="optWings" value="Hot Wings">
+            </div>
+            <div class="card-footer" style="font-weight: bolder;">
+              &#8377; 80 /-
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h2>Krusher Brownie</h2>
+            </div>
+            <div class="card-body">
+              <img src="../Images/krusher.jpg" class="img-thumbnail">
+              <input class="form-control" type="checkbox" id="optKrusher" value="Krusher Brownine">
+            </div>
+            <div class="card-footer" style="font-weight: bolder;">
+              &#8377; 40 /-
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      <div style="margin: 10px;" class="text-center">
+        <input type="button" class="btn btn-outline-danger " value="Place Order" onclick="showDialog()">
+      </div>
+    </footer>
+
+    <footer>
+      <div id="dialog">
+        <div class="card text-center">
+
+          <div class="card-header">
+            <h3 id="lblName"></h3>
+          </div>
+
+          <div class="card-body">
+            <dl>
+              <dt>Meal Name</dt>
+              <dd id="lblMeal"></dd>
+              <dt>Ad-ON's</dt>
+              <dd id="lblAdon"></dd>
+            </dl>
+          </div>
+
+          <div class="card-footer">
+            <h3 id="lblAmount"></h3>
+            <input type="button" value="OK" class="btn btn-outline-danger" onclick="closeDialog()">
+            <h3 id="lblError"></h3>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <script>
+
+    function closeDialog() {
+      document.getElementById("dialog").style.display = "none";
+    }
+
+    function showDialog() {
+      document.getElementById("dialog").style.display = "block";
+      document.getElementById("lblName").innerHTML = "Hello ! " + document.getElementById("txtName").value;
+      var mealName = "";
+      var adonName = "";
+      var mealCost = 0;
+      var adonCost = 0;
+      var burger = document.getElementById("optBurger");
+      var roller = document.getElementById("optRoller");
+      var wings = document.getElementById("optWings");
+      var krusher = document.getElementById("optKrusher");
+
+      if (burger.checked) {
+        mealName = burger.value;
+        mealCost = 120;
+      }
+      if (roller.checked) {
+        mealName = roller.value;
+        mealCost = 100;
+      }
+
+      if (burger.checked || roller.checked) {
+        if (wings.checked) {
+          adonName += wings.value + "<br>";
+          adonCost = 80;
+          mealCost = mealCost + adonCost;
+        }
+        if (krusher.checked) {
+          adonName += krusher.value + "<br>";
+          adonCost = 40;
+          mealCost = mealCost + adonCost;
+        }
+      }
+      else {
+        document.getElementById("lblError").innerHTML = "Select atleast one Meal to select Add-on.";
+      }
+
+      document.getElementById("lblMeal").innerHTML = mealName;
+      document.getElementById("lblAdon").innerHTML = adonName;
+      document.getElementById("lblAmount").innerHTML = "You have to Pay :" + "&#8377;" + mealCost + "/-";
+    } 
+  </script>
+</body>
+
+</html>

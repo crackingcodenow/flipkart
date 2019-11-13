@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>KFC</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <div>
+        <img src="../Images/kfcbanner.jpg" width="100%" height="400px" class="img-thumbnail">
+      </div>
+    </header>
+
+    <section>
+      <div id="dialog">
+        
+        <div class="card">
+          
+          <div class="card-header">
+            <h3 id="lblName"></h3>
+          </div>
+          
+          <div class="card-body">
+            <dl>
+              <dt>Meal Name : </dt>
+              <dd id="lblMeal"></dd>
+              <dt>Add-On : </dt>
+              <dd id="lblAdon"></dd>
+            </dl>
+          </div>
+          
+          <div class="card-footer text-center">
+            <h3 id="lblAmount"></h3>
+            <input type="button" value="OK" class="btn btn-outline-danger" onclick="showDialog()">
+            <a href="11_kfc.html"><input type="button" value="Back" class="btn btn-outline-danger"></a>
+          </div>
+        
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <script>
+    function ShowDialog() {
+      document.getElementById("dialog").style.display = "block";
+      document.getElementById("lblName").innerHTML = "Hello ! " + document.getElementById("txtName").value;
+      var mealName = "";
+      var adonName = "";
+      var mealCost = 0;
+      var adonCost = 0;
+      var burger = document.getElementById("optBurger");
+      var roller = document.getElementById("optRoller");
+      var wings = document.getElementById("optWings");
+      var krusher = document.getElementById("optKrusher");
+
+      if (burger.checked) {
+        mealName = burger.value;
+        mealCost = 120;
+      }
+      if (roller.checked) {
+        mealName = roller.value;
+        mealCost = 100;
+      }
+      if (wings.checked) {
+        adonName += wings.value + "<br>";
+        adonCost = 80;
+        mealCost = mealCost + adonCost;
+      }
+      if (krusher.checked) {
+        adonName += krusher.value + "<br>";
+        adonCost = 40;
+        mealCost = mealCost + adonCost;
+      }
+      document.getElementById("lblMeal").innerHTML = mealName;
+      document.getElementById("lblAdon").innerHTML = adonName;
+      document.getElementById("lblAmount").innerHTML = "You have to Pay :" + "&#8377;" + mealCost + "/-";
+    }
+  </script>
+
+</body>
