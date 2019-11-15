@@ -25,35 +25,35 @@
       <form>
         <fieldset class="border p-4">
           <legend class="w-auto text-center">
-            <h2 class="text-on-panel text-primary text-uppercase"><strong>Customer info</strong></h2>
+            <h2 class=" text-primary text-uppercase"><strong>Customer info</strong></h2>
           </legend>
 
           <div style="font-weight: bold;">
             <table align="center">
               <tr>
                 <td>Name</td>
-                <td>: <input type="text" maxlength="30" id="txtName"></td>
+                <td> <input type="text" maxlength="30" id="txtName" class="form-control"></td>
               </tr>
               <tr>
                 <td>Check-in-date</td>
-                <td>: <input type="date" id="txtDate"></td>
+                <td> <input type="date" id="txtDate" class="form-control"></td>
               </tr>
               <tr>
                 <td>Total no. of Days</td>
-                <td>: <input type="text" id="totalDaysBooked" value="1"></td>
+                <td> <input type="text" id="totalDaysBooked" value="1" class="form-control"></td>
               </tr>
               <tr>
                 <td>Total no. of Persons</td>
-                <td>: <input type="text" id="totalPersonsBooked" value="2"></td>
+                <td> <input type="text" id="totalPersonsBooked" value="2" class="form-control"></td>
               </tr>
             </table>
           </div>
 
         </fieldset>
 
-        <fieldset class="border p-4" style="text-align: center;">
+        <fieldset class="border p-4" style="text-align: center; margin-top: 15px;">
           <legend class="w-auto text-center">
-            <h2 class="text-on-panel text-primary text-uppercase"><strong>Select Room</strong></h2>
+            <h2 class="text-primary text-uppercase"><strong>Select Room</strong></h2>
           </legend>
           <div class="card-deck" style="font-weight: bold;">
             <div class="card">
@@ -61,7 +61,7 @@
                 <label id="">Deluxe Room</label>
               </div>
               <div class="card-body">
-                <img src="../Images/deluxerooms.jpeg" width="250" height="250">
+                <img src="../Images/deluxerooms.jpeg" width="350" height="250">
                 <input type="radio" id="optDeluxe" value="Deluxe-Room" name="roomType" class="form-control">
               </div>
               <div class="card-footer">
@@ -74,7 +74,7 @@
                 <label id="">Luxury Room</label>
               </div>
               <div class="card-body">
-                <img src="../Images/luxuryrooms.jpeg" width="250" height="250">
+                <img src="../Images/luxuryrooms.jpeg" width="350" height="250">
                 <input type="radio" id="optLuxury" value="Luxury-Room" name="roomType" class="form-control">
               </div>
               <div class="card-footer">
@@ -86,9 +86,9 @@
         </fieldset>
 
 
-        <fieldset class="border p-4" style="text-align: center; font-weight: bold; margin-top: 20px;">
+        <fieldset class="border p-4" style="text-align: center; font-weight: bold; margin-top: 15px;">
           <legend class="w-auto text-center">
-            <h2 class="text-on-panel text-primary text-uppercase"><strong>Select Amenities</strong></h2>
+            <h2 class="text-primary text-uppercase"><strong>Select Amenities</strong></h2>
           </legend>
           <div class="card-deck">
             <div class="card">
@@ -109,7 +109,7 @@
                 <label>Locker</label>
               </div>
               <div class="card-body">
-                <img src="../Images/locker.jpg" width="250" height="250">
+                <img src="../Images/locker.jpg" width="400" height="250">
                 <input type="checkbox" id="optLocker" value="Locker" class="form-control">
               </div>
               <div class="card-footer">
@@ -121,12 +121,12 @@
         </fieldset>
 
 
-        <fieldset class="border p-4" style="text-align: center; margin-bottom: 15px;">
+        <fieldset class="border p-4" style="text-align: center; margin-top: 15px;">
           <legend class="w-auto text-center">
-            <h2 class="text-on-panel text-primary text-uppercase"><strong>Advance Amount</strong></h2>
+            <h2 class="text-primary text-uppercase"><strong>Advance Amount</strong></h2>
           </legend>
           <div class="form-group">
-            <label>Amount : </label> <input id="advAmountPaid" value="">
+            <label>Amount : </label> <input id="advAmountPaid" class="form-control-sm">
           </div>
         </fieldset>
       </form>
@@ -149,38 +149,39 @@
           <table align="center">
             <tr>
               <td>Customer Name</td>
-              <td id="custName"></td>
+              <td id="custName" class="form-control"></td>
             </tr>
             <tr>
               <td>Check-in-date</td>
-              <td id="checkInDate"></td>
+              <td id="checkInDate" class="form-control"></td>
             </tr>
             <tr>
               <td>Total no. of Days</td>
-              <td id="totalDays"></td>
+              <td id="totalDays" class="form-control"></td>
             </tr>
             <tr>
               <td>Total no. of Persons</td>
-              <td id="totalPersons"></td>
+              <td id="totalPersons" class="form-control"></td>
             </tr>
             <tr>
               <td>Room Type</td>
-              <td id="roomType"></td>
+              <td id="roomType" class="form-control"></td>
             </tr>
             <tr>
               <td>Amenities</td>
-              <td id="amenities"></td>
+              <td id="amenities" class="form-control"></td>
+              <td id="amenities" class="form-control"></td>
             </tr>
             <tr>
               <td>Adv Amount</td>
-              <td id="advAmount"></td>
+              <td id="advAmount" class="form-control"></td>
             </tr>
             <tr>
               <td>Total Amount</td>
-              <td id="totalAmount"></td>
+              <td id="totalAmount" class="form-control"></td>
             </tr>
             <tr>
-              <td>Balance Amount</td>
+              <td>Balance Amount : </td>
               <td id="balAmount"></td>
             </tr>
 
