@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>If...Else</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <script>
+    var userDetails = {
+      UserName: "John",
+      Password: "john123",
+    };
+
+    function verifyUser() {
+      var userName = document.getElementById("txtName").value;
+      var password = document.getElementById("txtPwd").value;
+
+      if (userName == userDetails.UserName && userDetails.Password) {
+        location.href = "success.html";
+      }
+      else {
+        document.getElementById("error").style.display = "block";
+        document.getElementById("frm").style.opacity = "0.3";
+      }
+    }
+
+    function closeClick() {
+      document.getElementById("error").style.display = "none";
+      document.getElementById("frm").style.opacity = "1";
+    }
+
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <form id="frm">
+      <h2 class="form-text">USER LOGIN</h2>
+      <div class="form-group">
+        <label>User Name</label>
+        <div>
+          <input type="text" id="txtName" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <div>
+          <input type="password" id="txtPwd" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="button" class="btn btn-primary btn-block" value="Login" onclick="verifyUser()">
+      </div>
+    </form>
+
+    <div style="display: none; margin-top: 150px; position: fixed;" id="error" class="alert alert-danger">
+      <h2 class="alert-heading">Invalid Username / Password</h2>
+      <p class="text-danger">Please verify your UserName and Password.</p>
+      <input type="button" value="X" class="btn btn-danger" onclick="closeClick()">
+    </div>
+  </div>
+</body>
+
+</html>

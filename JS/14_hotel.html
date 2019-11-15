@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Hotel Registration</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <style>
+    #dialog {
+      width: 500px;
+      height: auto;
+      position: relative;
+      margin-top: 50px;
+      margin-left: 300px;
+    }
+  </style>
+</head>
+
+<body class="container" onload="closeDialog()">
+  <header align="center">
+    <img src="../Images/hotelbanner2.png" width="20%" height="150px">
+  </header>
+
+  <section>
+    <div>
+      <form>
+        <fieldset class="border p-4">
+          <legend class="w-auto text-center">
+            <h2 class="text-on-panel text-primary text-uppercase"><strong>Customer info</strong></h2>
+          </legend>
+
+          <div style="font-weight: bold;">
+            <table align="center">
+              <tr>
+                <td>Name</td>
+                <td>: <input type="text" maxlength="30" id="txtName"></td>
+              </tr>
+              <tr>
+                <td>Check-in-date</td>
+                <td>: <input type="date" id="txtDate"></td>
+              </tr>
+              <tr>
+                <td>Total no. of Days</td>
+                <td>: <input type="text" id="totalDaysBooked" value="1"></td>
+              </tr>
+              <tr>
+                <td>Total no. of Persons</td>
+                <td>: <input type="text" id="totalPersonsBooked" value="2"></td>
+              </tr>
+            </table>
+          </div>
+
+        </fieldset>
+
+        <fieldset class="border p-4" style="text-align: center;">
+          <legend class="w-auto text-center">
+            <h2 class="text-on-panel text-primary text-uppercase"><strong>Select Room</strong></h2>
+          </legend>
+          <div class="card-deck" style="font-weight: bold;">
+            <div class="card">
+              <div class="card-header text-dark">
+                <label id="">Deluxe Room</label>
+              </div>
+              <div class="card-body">
+                <img src="../Images/deluxerooms.jpeg" width="250" height="250">
+                <input type="radio" id="optDeluxe" value="Deluxe-Room" name="roomType" class="form-control">
+              </div>
+              <div class="card-footer">
+                <label>Price : &#8377; <span>1500 (2 persons) per day + <br> 500 extra per person</span> per day</label>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <label id="">Luxury Room</label>
+              </div>
+              <div class="card-body">
+                <img src="../Images/deluxerooms.jpeg" width="250" height="250">
+                <input type="radio" id="optLuxury" value="Luxury-Room" name="roomType" class="form-control">
+              </div>
+              <div class="card-footer">
+                <label>Price : &#8377; <span>2500 (2 persons) per day + <br> 500 extra per person</span> per day</label>
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+
+
+        <fieldset class="border p-4" style="text-align: center; font-weight: bold; margin-top: 20px;">
+          <legend class="w-auto text-center">
+            <h2 class="text-on-panel text-primary text-uppercase"><strong>Select Amenities</strong></h2>
+          </legend>
+          <div class="card-deck">
+            <div class="card">
+              <div class="card-header">
+                <label>Air-Conditioner</label>
+              </div>
+              <div class="card-body">
+                <img src="../Images/air-conditioner.jpg" width="400" height="250">
+                <input type="checkbox" id="optAC" value="AC" class="form-control">
+              </div>
+              <div class="card-footer">
+                <label>Price : &#8377; <span>1000</span> per day</label>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <label>Locker</label>
+              </div>
+              <div class="card-body">
+                <img src="../Images/locker.jpg" width="250" height="250">
+                <input type="checkbox" id="optLocker" value="Locker" class="form-control">
+              </div>
+              <div class="card-footer">
+                <label>Price : &#8377; <span>500</span> per day</label>
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+
+
+        <fieldset class="border p-4" style="text-align: center; margin-bottom: 15px;">
+          <legend class="w-auto text-center">
+            <h2 class="text-on-panel text-primary text-uppercase"><strong>Advance Amount</strong></h2>
+          </legend>
+          <div class="form-group">
+            <label>Amount : </label> <input id="advAmountPaid" value="">
+          </div>
+        </fieldset>
+      </form>
+
+      <div align="center">
+        <input type="button" value="Register Room" class="btn btn-outline-danger" style="margin-bottom: 20px;"
+          onclick="showDialog()">
+      </div>
+  </section>
+
+  <section>
+    <div id="dialog">
+      <fieldset class="border p-4" style="margin-bottom: 15px;">
+        <legend class="w-auto text-center">
+          <h2 class="text-on-panel text-primary text-uppercase" style="text-align: center;"><strong>Bill
+              Summary</strong></h2>
+        </legend>
+
+        <div style="font-weight: bold;">
+          <table align="center">
+            <tr>
+              <td>Customer Name</td>
+              <td id="custName"></td>
+            </tr>
+            <tr>
+              <td>Check-in-date</td>
+              <td id="checkInDate"></td>
+            </tr>
+            <tr>
+              <td>Total no. of Days</td>
+              <td id="totalDays"></td>
+            </tr>
+            <tr>
+              <td>Total no. of Persons</td>
+              <td id="totalPersons"></td>
+            </tr>
+            <tr>
+              <td>Room Type</td>
+              <td id="roomType"></td>
+            </tr>
+            <tr>
+              <td>Amenities</td>
+              <td id="amenities"></td>
+            </tr>
+            <tr>
+              <td>Adv Amount</td>
+              <td id="advAmount"></td>
+            </tr>
+            <tr>
+              <td>Total Amount</td>
+              <td id="totalAmount"></td>
+            </tr>
+            <tr>
+              <td>Balance Amount</td>
+              <td id="balAmount"></td>
+            </tr>
+
+          </table>
+          <div align="center"> <br>
+            <input type="button" value="OK" class="btn btn-outline-info" onclick="closeDialog()" id="close">
+          </div>
+
+        </div>
+      </fieldset>
+    </div>
+  </section>
+
+
+  <script>
+    function closeDialog() {
+      document.getElementById("dialog").style.display = "none";
+    }
+
+    function showDialog() {
+
+      document.getElementById("dialog").style.display = "block";
+
+      var advanceAmount = 0;
+      var advanceAmount = document.getElementById("advAmountPaid").value;
+      var days = document.getElementById("totalDaysBooked").value;
+      var persons = document.getElementById("totalPersonsBooked").value;
+
+
+      if (advanceAmount > 0) {
+        var roomName = "";
+        var amenitiesName = "";
+        var roomCost = 0;
+        var amenitiesCost = 0;
+        var advanceAmount = 0;
+
+        var deluxe = document.getElementById("optDeluxe");
+        var luxury = document.getElementById("optLuxury");
+        var ac = document.getElementById("optAC");
+        var locker = document.getElementById("optLocker");
+        var advanceAmount = document.getElementById("advAmountPaid").value;
+
+        if (deluxe.checked) {
+          roomName = deluxe.value;
+          roomCost = 1500;
+        }
+        if (luxury.checked) {
+          roomName = luxury.value;
+          roomCost = 2500;
+        }
+
+        if (deluxe.checked || luxury.checked) {
+          if (ac.checked) {
+            amenitiesName += ac.value + "<br>";
+            amenitiesCost = 1000;
+            roomCost = roomCost + amenitiesCost;
+          }
+          if (locker.checked) {
+            amenitiesName += locker.value + "<br>";
+            amenitiesCost = 500;
+            roomCost = roomCost + amenitiesCost;
+          }
+
+          if (days >= 2) {
+            roomCost = roomCost * days;
+          }
+          if (persons > 2) {
+            extra = 500;
+            roomCost = roomCost + ((persons - 2) * (extra * days));
+          }
+        }
+        else {
+          alert("Atleast one room have to be selected to proceed.");
+        }
+
+        document.getElementById("custName").innerHTML = document.getElementById("txtName").value;
+        document.getElementById("checkInDate").innerHTML = document.getElementById("txtDate").value;
+        document.getElementById("totalDays").innerHTML = document.getElementById("totalDaysBooked").value;
+        document.getElementById("totalPersons").innerHTML = document.getElementById("totalPersonsBooked").value;
+        document.getElementById("roomType").innerHTML = roomName;
+        document.getElementById("amenities").innerHTML = amenitiesName;
+        document.getElementById("advAmount").innerHTML = advanceAmount;
+        document.getElementById("totalAmount").innerHTML = roomCost;
+
+        var balanceAmount = roomCost - advanceAmount;
+        document.getElementById("balAmount").innerHTML = "You have to pay : " + "&#8377;" + balanceAmount + "/-";
+      }
+      else {
+        alert("Please pay some Advance to book a room. \nThank You.");
+      }
+    }
+  </script>
+
+</body>
+
+</html>
