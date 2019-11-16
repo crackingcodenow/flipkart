@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Multiple conditions</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <script>
+    var userDetails = {
+      Name : "john",
+      OTP : 123456,
+      PIN : 1234
+    };
+    function verify() {
+      var pin = document.getElementById("txtPin").value;
+      if(pin == userDetails.PIN) {
+        document.write("verified with Pin.");
+      }
+      else if (pin == userDetails.OTP) {
+        document.write("verified with OTP.");
+      }
+      else {
+        alert("enter valid pin/otp");
+      }
+    }
+    
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <fieldset>
+      <legend>Verify Pin / Otp</legend>
+      <div class="form-row">
+        <input type="text" id="txtPin" class="form-control-lg" placeholder="You can enter Otp/Pin">
+        <input type="button" value="Verify" class="btn btn-primary" onclick="verify()">
+      </div>
+    </fieldset>
+  </div>
+</body>
+
+</html>

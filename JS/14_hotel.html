@@ -44,7 +44,8 @@
               </tr>
               <tr>
                 <td>Total no. of Persons</td>
-                <td> <input type="text" id="totalPersonsBooked" value="2" class="form-control"><span>(500 Extra amt per day if > 2)</span></td>
+                <td> <input type="text" id="totalPersonsBooked" value="2" class="form-control"></td>
+                <td>(500 Extra amt per day if > 2)</td>
               
               </tr>
             </table>
@@ -250,7 +251,7 @@
             roomCost = roomCost * days;
           }
           if (persons > 2) {
-            extra = 500;
+            var extra = 500;
             roomCost = roomCost + ((persons - 2) * (extra * days));
           }
         }
