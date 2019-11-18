@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CSS & BS Practice</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <style>
+    #myDivStatic {
+      position: static;
+      left: 10px;
+      top: 10px;
+      background-color: aqua;
+      width: fit-content;
+      padding: 5px;
+    }
+
+    #myDivFixed {
+      position: fixed;
+      top: 1px;
+      right: 0px;
+      background-color: brown;
+      width: fit-content;
+      padding: 5px;
+    }
+
+    #myDivRelative {
+      position: relative;
+      left: 30px;
+      top: 10px;
+      background-color: yellow;
+      width: fit-content;
+      padding: 5px;
+    }
+
+    #myDivAbsoluteParent {
+      position: relative;
+      width: 400px;
+      height: 280px;
+      border: 3px solid #73AD21;
+    }
+
+    #myDivAbsolute {
+      position: absolute;
+      top: 80px;
+      right: 0;
+      width: 230px;
+      height: 180px;
+      border: 3px solid #73AD21;
+    }
+
+    #myDivSticky {
+      position: sticky;
+      left: 200px;
+      top: 10px;
+      background-color: tomato;
+      width: fit-content;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1 class="bg-primary text-white"><i>CSS & BS Practice:</i></h1>
+  </div>
+  <div id="myDivStatic">
+    <h2>Position : static (normal)</h2>
+    <p>left : 10px;</p>
+    <p>top : 10px;</p>
+    <p>right : 0; </p>
+    <p>This is a static element <br>
+      which means it doesn't <br>
+      move even after the styles are <br> applied on the page.</p>
+  </div>
+  <hr>
+
+  <div id="myDivFixed">
+    <h2>Position : fixed;</h2>
+    <p>top : 1;</p>
+    <p>right : 0;</p>
+    <p>This element is positioned <br>
+      relative to the viewport <br>
+      which means it doesn't <br>
+      move with the flow of the page.</p>
+    <p></p>
+  </div>
+  <hr>
+
+  <div id="myDivRelative">
+    <h2>Position : Relative</h2>
+    <p>left : 10;</p>
+    <p>top : 10;</p>
+    <p>This element is positioned <br>
+      relative to its normal postion,<br>
+      that means the actual position <br>
+      when relative is not applied. </p>
+  </div>
+  <hr>
+
+  <div id="myDivAbsoluteParent">
+    <h2>Position : Relative;</h2>
+    <p>width : 400px;</p>
+    <p>height : 280px;</p>
+    <div id="myDivAbsolute">
+      <h4>Position : Absolute;</h4>
+      <p>top : 80px; <br> right : 0;</p>
+      <p>width: 230px; <br> height : 180px;</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div id="myDivSticky">
+    <h2>Position : Sticky</h2>
+    <p>left : 200px;</p>
+    <p>top : 10px;</p>
+    <p>This element is positioned <br>
+      is positioned based on the user's scroll position.<br>
+      It toggles between relative and fixed, depending <br>
+      on the scroll position.<br>
+      It is positioned relative until a <br>
+      given offset position is met in the viewport - <br>
+      then it "sticks" in place (like position:fixed).</p>
+  </div>
+  
+  <hr>
+
+  <div>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+  </div>
+
+</body>
+
+</html>

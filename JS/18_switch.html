@@ -5,7 +5,20 @@
   <title></title>
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
   <script>
-
+    function f1() {
+      var number = 3;
+      switch (number) {
+        case 1:
+          document.write("One"); break;
+        case 2:
+          document.write("Two"); break;
+        case 3:
+          document.write("Three"); break;
+        default:
+          document.write("Please enter the value between1 to 3");
+      }
+    }
+    f1();
   </script>
 </head>
 
@@ -14,3 +27,114 @@
 </body>
 
 </html>
+
+<!-- Switch selection statements:
+
+A switch in electronics is used to control the execution flow of electrons and interrupt the flow of electrons.
+A selector switch is responsible for executing only the set of statements that are required for the specific condition.
+The selection switch is designed by using switch, case and break keywords.
+
+<diagram>
+
+Syntax:
+  switch(expression) {
+    case constant-expression:
+    statement
+    jump statement
+    [default: 
+    statement
+    jump-statement ]
+  } 
+
+  <write above prog>
+
+FAQ's:
+1. Can you define a switch without a break? 
+A: Yes. It will stop execution when break found or program reaches the end.
+
+2. Can you define switch without default?
+A: Yes. Then no action will be performed if any condition is not matching.
+
+3. Can you define default at the top above cases?
+A: Yes. Bcos there is no pre-defined for switch.
+
+4. Is switch statement case value case sensitive?
+A: Yes.
+
+5. Then how you will handle multiple cases for different capitalization?
+A: You can define multiple cases for single block of statements. 
+    Every case can configure a specific capitalization. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <script>
+    function f1() {
+      var str = document.getElementById("txtStatus").value;
+
+      switch (str) {
+        case "y":
+        case "Y":
+          document.write("You chosen Yes"); break;
+        case "n":
+        case "N":
+          document.write("You chosen No"); break;
+        default:
+          document.write("please choose yes r no"); break;
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  Enter Y/N :
+  <input type="text" id="txtStatus">
+  <input type="button" value="Continue" onclick="f1()">
+</body>
+
+</html>
+
+<!-- 
+6. How to manage capitalization for case string?
+A: By converting into another case. -->
+<script>
+  function f1() {
+    var str = document.getElementById("txtStatus").value;
+
+    switch (str.toLowerCase()) {
+      case "yes":
+        document.write("You chosen Yes"); break;
+      case "no":
+        document.write("You chosen No"); break;
+      default:
+        document.write("please choose yes or no"); break;
+    }
+  }
+</script>
+
+
+<!-- 
+7. Can case string be a Boolena type?
+A:  Yes, but case must be defined with boolean "true/false" but not with 0 or 1.
+  -->
+
+<script>
+  function f1() {
+    var x = true;
+    switch (x) {
+      case false:
+        document.write("X is false"); break;
+      case true:
+        document.write("X is true"); break;
+    }
+  }
+  fl(); 
+</script>
+
+<!-- 
+8. How can you define case for range of values?
+A: 
+-->
