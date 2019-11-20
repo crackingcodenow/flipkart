@@ -4,16 +4,44 @@
 <head>
   <title>Looping Card pin check</title>
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    #mainDiv {
+      position: relative;
+      top: 200px;
+      left: 200px;
+    }
+
+    #textDiv {
+      position: relative;
+      top: 220px;
+      left: 200px;
+    }
+  </style>
 </head>
 
 <body class="container">
-  <div>
+  <div id="mainDiv">
     <h2>Enter the Pin:</h2>
     <input type="text" id="txtPin" class="form-control-lg" maxlength="4" autofocus>
-    <input type="button" value="Submit" class="btn btn-primary" id="checkButton" onclick="verifyPin()"><br>
+    <input type="button" value="Submit" class="btn btn-primary" id="checkButton" onkeyup="verifyPin()"
+      onclick="verifyPin()"><br>
     <label id="verifiedMsg" class="text-info"></label>
     <label id="errorMsg" class="text-danger"></label> <br>
+  </div>
 
+  <div id="textDiv">
+    <h3>Check the following conditions:</h3>
+    <ul>
+      <li>See that autofocus is enabled when page loaded.</li>
+      <li>Try entering correct pin : 1234</li>
+      <li>You are not allowed to enter more than 4 numbers.</li>
+      <li>Now Refresh the page, and enter wrong pin for 3 times.</li>
+      <li>Every time wrong pin entered, attemps left is shown below and also autofocus is enabled.</li>
+      <li>Try entering any other values except numbers (alphabets, spcl chars etc), <br> it displays error msg asking
+        you to enter only numbers.</li>
+      <li>After 3 attempts of wrong pin entry, text box and submit button are disabled automatically.</li>
+    </ul>
   </div>
 
   <script>
@@ -26,23 +54,20 @@
       click -= 1;
 
       if (enteredPin == Number(enteredPin)) {
-
-        for (var i = 3; i > 0; i--) {
-          if (enteredPin == userPin) {
-            document.write("Correct Pin entered");
-            document.getElementById("txtPin").value = "";
-            document.getElementById("errorMsg").innerHTML = "";
-          }
-          else {
-            document.getElementById("errorMsg").innerHTML = "Enter the correct Pin." + "<br>" +
-              "You have " + click + " attemps remaining.";
-            document.getElementById("txtPin").value = "";
-            document.getElementById("txtPin").focus();
-            if (click <= 0) {
-              document.getElementById("errorMsg").innerHTML = "Card blocked";
-              document.getElementById("checkButton").disabled = true;
-              document.getElementById("txtPin").disabled = true;
-            }
+        if (enteredPin == userPin) {
+          document.write("Correct Pin entered");
+          document.getElementById("txtPin").value = "";
+          document.getElementById("errorMsg").innerHTML = "";
+        }
+        else {
+          document.getElementById("errorMsg").innerHTML = "Enter the correct Pin." + "<br>" +
+            "You have " + click + " attemps remaining.";
+          document.getElementById("txtPin").value = "";
+          document.getElementById("txtPin").focus();
+          if (click <= 0) {
+            document.getElementById("errorMsg").innerHTML = "Card blocked";
+            document.getElementById("checkButton").disabled = true;
+            document.getElementById("txtPin").disabled = true;
           }
         }
       }
