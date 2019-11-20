@@ -1,0 +1,41 @@
+<!--
+  Loop termination: JS looping control statements by using jump statements like break and return.
+Ex: -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    var users = [
+      { UserName: "john" },
+      { UserName: "john12" },
+      { UserName: "david" },
+      { UserName: "davi_nit" }
+    ]
+
+    function verifyUser() {
+      var username = document.getElementById("txtName").value;
+      var msg = document.getElementById("msg");
+
+      for (var i = 0; i < users.length; i++) {
+        if (users[i].UserName == username) {
+          msg.innerHTML = "User Name Taken - Try another";
+          break;
+        }
+        else {
+          msg.innerHTML = "User Name available";
+        }
+      }
+    }  
+  </script>
+</head>
+
+<body>
+  <div>
+    User Name : <input type="text" id="txtName" onkeyup="verifyUser()" autofocus>
+    <span id="msg"></span>
+  </div>
+</body>
+
+</html>

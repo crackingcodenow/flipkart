@@ -1,0 +1,54 @@
+<!-- 
+  Skip Loop counter: You can ingnore any specific loop counter by using the jump statement "continue". 
+  It is used to verify the given condition and skip the counter to continue with the next set of iterations.
+  Ex:
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+  <script>
+    var products = [
+      { Name: "Samsung TV", Category: "Electronics" },
+      { Name: "Nike Casuals", Category: "Shoes" },
+      { Name: "MI Mobile", Category: "Electronics" },
+      { Name: "Lee cooper boots", Category: "Shoes" },
+      { Name: "UI Guide", Category: "Books" }
+    ];
+
+    function categoryChanged() {
+      var category = frmProducts.category.value;
+      document.getElementById("list").innerHTML = "";
+      for (var i = 0; i < products.length; i++) {
+        if (products[i].Category !== category) {
+          continue;
+        } else {
+          document.getElementById("list").innerHTML += products[i].Name + "<br>";
+        }
+      }
+    }
+  </script>
+
+  <body class="container">
+    <form name="frmProducts">
+      <fieldset>
+        <legend>Select category</legend>
+        <div>
+          <input type="radio" name="category" value="Electronics" onchange="categoryChanged()" class=""> Electronics
+          <br>
+          <input type="radio" name="category" value="Shoes" onchange="categoryChanged()" class=""> Shoes <br>
+          <input type="radio" name="category" value="Books" onchange="categoryChanged()" class=""> Books
+        </div>
+      </fieldset>
+      <br>
+      <div id="list"> </div>
+    </form>
+  </body>
+
+</html>

@@ -1,0 +1,56 @@
+<!-- 
+  Adding child elements into Parent element dynamically : Js provides the function "appendChild()", 
+  which is used to add a child element dynamically into the parent element.
+  You can create a new element dynamically by using the function "createElement()".
+  Ex: same as above prog but change in for loop
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <div>
+    <form name="frmProducts">
+      <fieldset>
+        <legend>Select category</legend>
+        <input type="radio" name="category" value="Electronics" onchange="categoryChanged()"> Electronics
+        <input type="radio" name="category" value="Shoes" onchange="categoryChanged()"> Shoes
+        <input type="radio" name="category" value="Books" onchange="categoryChanged()"> Books
+      </fieldset>
+      <br>
+      <ol id="list"> </ol>
+    </form>
+  </div>
+
+  <script>
+    var products = [
+      { Name: "Samsung TV", Category: "Electronics" },
+      { Name: "Nike Casuals", Category: "Shoes" },
+      { Name: "MI Mobile", Category: "Electronics" },
+      { Name: "Lee cooper boots", Category: "Shoes" },
+      { Name: "UI Guide", Category: "Books" }
+    ];
+
+    function categoryChanged() {
+      var category = frmProducts.category.value;
+      document.getElementById("list").innerHTML = "";
+
+      for (var i = 0; i < products.length; i++) {
+        if (products[i].Category !== category) {
+          continue;
+        }
+        else {
+          var item = document.createElement("li");
+          item.innerHTML = products[i].Name;
+          document.getElementById("list").appendChild(item);
+        }
+      }
+    } 
+  </script>
+</body>
+
+</html>
