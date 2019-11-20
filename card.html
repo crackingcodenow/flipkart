@@ -23,8 +23,7 @@
   <div id="mainDiv">
     <h2>Enter the Pin:</h2>
     <input type="text" id="txtPin" class="form-control-lg" maxlength="4" autofocus>
-    <input type="button" value="Submit" class="btn btn-primary" id="checkButton" onkeyup="verifyPin()"
-      onclick="verifyPin()"><br>
+    <input type="button" value="Submit" class="btn btn-primary" id="checkButton" onkeyup="verifyPin()" onclick="verifyPin()"><br>
     <label id="verifiedMsg" class="text-info"></label>
     <label id="errorMsg" class="text-danger"></label> <br>
   </div>
@@ -53,20 +52,23 @@
       click -= 1;
 
       if (enteredPin == Number(enteredPin)) {
-        if (enteredPin == userPin) {
-          document.write("Correct Pin entered");
-          document.getElementById("txtPin").value = "";
-          document.getElementById("errorMsg").innerHTML = "";
-        }
-        else {
-          document.getElementById("errorMsg").innerHTML = "Enter the correct Pin." + "<br>" +
-            "You have " + click + " attemps remaining.";
-          document.getElementById("txtPin").value = "";
-          document.getElementById("txtPin").focus();
-          if (click <= 0) {
-            document.getElementById("errorMsg").innerHTML = "Card blocked";
-            document.getElementById("checkButton").disabled = true;
-            document.getElementById("txtPin").disabled = true;
+
+        for (var i = 3; i > 0; i--) {
+          if (enteredPin == userPin) {
+            document.write("Correct Pin entered");
+            document.getElementById("txtPin").value = "";
+            document.getElementById("errorMsg").innerHTML = "";
+          }
+          else {
+            document.getElementById("errorMsg").innerHTML = "Enter the correct Pin." + "<br>" +
+              "You have " + click + " attemps remaining.";
+            document.getElementById("txtPin").value = "";
+            document.getElementById("txtPin").focus();
+            if (click <= 0) {
+              document.getElementById("errorMsg").innerHTML = "Card blocked";
+              document.getElementById("checkButton").disabled = true;
+              document.getElementById("txtPin").disabled = true;
+            }
           }
         }
       }
