@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Amazon Shopping Cart</title>
+  <style>
+    #imgPreview {
+      width: 250px;
+      height: 250px;
+    }
+  </style> 
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body class="container" onload="bodyLoad()">
+  <div>
+    <h1 class="text-info text-center text-uppercase border border-dark">Amazon shopping</h1>
+  </div>
+
+  <div class="form-group">
+    <label>Select a Category</label>
+    <div>
+      <select onchange="categoryChanged()" id="lstCategories" class="form-control">
+
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Select a Product</label>
+    <div>
+      <select onchange="productChanged()" id="lstProducts" class="form-control">
+
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Product preview</label>
+    <div class="card">
+      <div class="card-header">
+        <h3 id="lblName"></h3>
+      </div>
+      <div class="card-body">
+        <img id="imgPreview" class="img-thumbnail">
+        <input type="number" id="txtQty" value="1" min="1" max="4" onchange="quantityChanged()">
+      </div>
+      <div class="card-footer">
+        <h4 id="lblPrice"></h4>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    var categories = ["Select Category", "Electronics", "Shoes"];
+    var electronics = ["Select Product", "AC", "IPAD"];
+    var shoes = ["Select Product", "Nike", "Adidas"];
+    var products = [
+      { Name: "TV", Price: "45000", Category: "Electronics", Photo: "../Images/air-conditioner.jpg" },
+      { Name: "IPAD", Price: "60000", Category: "Electronics", Photo: "../Images/ipad.jpg" },
+      { Name: "Nike", Price: "5000", Category: "Shoes", Photo: "../Images/shoes1.jpg" },
+      { Name: "Adidas", Price: "6000", Category: "Shoes", Photo: "../Images/shoes2.jpg" },
+    ];
+
+    function bodyLoad() {
+      var lstCategories = document.getElementById("lstCategories");
+      for (var i = 0; i < categories.length; i++) {
+        var opt = document.createElement("option");
+        opt.text = categories[i];
+        opt.value = categories[i];
+        lstCategories.appendChild(opt);
+      } 
+    }
+
+    function addProducts(collection) {
+      var lstProducts = document.getElementById("lstProducts");
+      lstProducts.innerHTML = "";
+      for(var i=0; i<collection.length; i++) {
+        var opt = document.createElement("option");
+        opt.text = collection[i];
+        opt.value = collection[i];
+        lstProducts.appendChild(opt);
+      }
+    }
+
+    function categoryChanged() {
+      var selectedCategory = document.getElementById("lstCategories").value;
+      switch (selectedCategory) {
+        case "Electronics": addProducts(electronics); break;
+        case "Shoes": addProducts(shoes); break;
+        default: document.getElementById("lstProducts").innerHTML = ""; break;
+      }
+    }
+
+    var price;
+    function showDetails(index) {
+      price = products[index].Price;
+      document.getElementById("lblName").innerHTML = products[index].Name;
+      document.getElementById("lblPrice").innerHTML = "&#8377;" + price;
+      document.getElementById("imgPreview").src = products[index].Photo;
+    }
+
+    function productChanged() {
+      var lstProducts = document.getElementById("lstProducts").value;
+      switch (lstProducts) {
+        case "AC":
+          showDetails(0); break;
+        case "IPAD":
+          showDetails(1); break;
+        case "Nike":
+          showDetails(2); break;
+        case "Adidas":
+          showDetails(3); break;
+      }
+    }
+
+    function quantityChanged() {
+      var txtQty = document.getElementById("txtQty").value;
+      document.getElementById("lblPrice").innerHTML = "&#8377;" + (txtQty * price);
+
+    }
+
+  </script>
+</body>
+
+</html>
