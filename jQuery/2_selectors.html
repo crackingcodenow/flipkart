@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("h2").html("jQuery example");
+      $("#para1").html("This is <b>Para-1</b>");
+      $(".para2").text("This is Para-2");
+      $("p").css({
+        "background-color" : "grey",
+        "color" : "white"
+       });
+      $("#txtName").val("John Doe");
+      $("#pic").attr("src", "../Images/burger.jpg");
+    });
+  
+  
+  </script> 
+</head>
+<body>
+  <h2></h2>
+  <p id="para1"></p>
+  <p class="para2"></p>
+  <hr>
+  <label>User Name:</label>
+  <input type="text" id="txtName">
+  <div>
+    <img id="pic" width="100" height="100">
+  </div>
+     
+</body>
+</html>

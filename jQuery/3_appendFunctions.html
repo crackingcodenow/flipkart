@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#p1").before("<p>Para-0</p>");
+      $("#p1").after("<p>Para-2</p>");
+      $("#p4").prepend("<span>Prepended </span>");
+      $("#p5").append("<span> Appended</span>");
+      $("<span>appendTo</span>").appendTo("#p6");
+      $("<li>Item-1</li>").appendTo("#list");
+      $("#list").append("<li>Item-2</li>");
+      $("#p7").empty();
+      $("#p8").remove();
+    });
+  
+  
+  </script>
+</head>
+<body>
+  <p id="p1">Para-1</p>
+  <p id="p3">Para-3</p>
+  <p id="p4">Para-4</p>
+  <p id="p5">Para-5</p>
+  <h4 id="p6">Para-6</h4>
+  <ol id="list"></ol>
+  <p id="p7">Para-7</p>
+  <p id="p8">Para-8</p>
+  <p id="p9">Para-9</p>
+  
+</body>
+</html>
