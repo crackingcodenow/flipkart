@@ -1,0 +1,80 @@
+1) .container, .container-fluid 
+
+2) .row, .col, .col-sm-12, sm|md|lg|xl
+
+3) h1 to h6 ==>  .display-1,2,3,4
+4) <small> tag for h1 to h6.
+
+5) <mark> text </mark>, <abbr title="World heal org">WHO</abbr>, 
+    <blockquote>, <dl>, <code>, <kbd>, <pre>, 
+6) .font-weight-bold | bolder | light | lighter | normal
+7) .font-italic, .lead, .small, .text-left, etc (Refer TYPOGRAPHY chap on w3schools BS chap.)
+
+8) COLORS       .text-primary, .text-secondary,
+                .text-success, .text-info,   .text-body,  
+                .text-warning, .text-danger, .text-muted, 
+                .text-white,   .text-dark,   .text-light
+
+9) BG COLORS    .bg-primary, .bg-secondary,
+                .bg-success, .bg-info,  
+                .bg-warning, .bg-danger, 
+                .bg-dark,    .bg-light
+            
+10) TABLE       .table, .table-striped, .table-bordered, .table-hover,
+                .table-dark, .table-borderless, .table-primary | secondary etc
+                .table-responsive-sm | md | lg | xl
+
+11) IMAGES      .rounded, .rounded-circle, .img-thumbnail, .img-fluid,
+                .float-left | right, [.mx-auto (margin:auto) & .d-block (display:block) ] for Centered image.
+
+12) Jumbotron   .jumbotron, .jumbotron-fluid 
+
+13) ALERTS      .alert, .alert-success | primary etc, .alert-link (use inside <a> </a>)
+                
+                To close alert boxes :
+                <div class="alert alert-success alert-dismissible">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Success!</strong> Indicates a successful or positive action.
+                </div>
+                
+                To fade out alert: <div class="alert alert-danger alert-dismissible fade show">
+
+14) BUTTONS     .btn, .btn-primary | secondary etc -- used for buttons, input & links.
+                .btn-outline-primary etc, .btn-lg | sm, .btn-block
+                .active, .disabled, .spinner-border  -sm, .spinner-grow  -sm
+                .btn-group  -sm | lg | vertical
+
+15) BADGES      .badge, .badge-primary | secondary etc.      
+                .badge-pill 
+
+16) PROGRESS    .progress & .progress-bar- striped | animated
+                <div class="progress" style="height:20px">
+                  <div class="progress-bar bg-primary" style="width:70%">70%</div>
+                </div>
+                bars can be stacked by using multiple prg-bars in main div progress tag.
+
+17) PAGINATION  .pagination & .page-item & .page-link(for each link)  
+                .active, .disabled,         
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+
+18) BREADCRUMB  .breadcrumb, .breadcrumb-item
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Photos</a></li>
+                  <li class="breadcrumb-item"><a href="#">Summer 2017</a></li>
+                </ul>
+
+19) LIST GROUP  .list-group & .list-group-item-action (hover)     
+                .active, .disabled,            
+
+20) CARD        .card, .card-header, .card-body, .card-footer, .card-deck, .card-group 
+                .card-title, .card-text, .card-link, 
+                .card-img-top | bottom , .stretched-link, .card-img-overlay 
+                .card-columns 
+
+21) DROPDOWN    .dropdown, .dropdown-toggle, .dropdown-menu, .dropdown-item             
